@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { Task } from '../task';
 
 @Component({
@@ -9,11 +9,8 @@ import { Task } from '../task';
 export class DetailComponent implements OnInit {
 
   @Input() task : Task;
-
   constructor() { }
 
   ngOnInit() {
   }
-
 }
- 

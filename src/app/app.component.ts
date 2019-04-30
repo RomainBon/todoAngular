@@ -32,7 +32,16 @@ export class AppComponent {
       name: "Aller a CapG",
       status: TaskStatus.Todo,
       deadLine: new Date('2019-06-04')
+    },
+    {
+      name: "Adopter des chatons",
+      status: TaskStatus.Todo,
+      deadLine: new Date('2019-05-12')
     }
   ];
-  currentTask = this.tasks[3];
+  currentTask = this.tasks[0];
+
+  setCurentTask(task: Task){
+    this.currentTask = task;
+  }
 }

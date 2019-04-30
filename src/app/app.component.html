@@ -1,3 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-detail [task]="currentTask" ></app-detail>
-<app-nav-list [taskList]="tasks" ></app-nav-list>
+<div class="App-Title">
+    <h1>Todo List</h1>
+</div>
+<div class="App-Todo">
+    <app-nav-list [taskList]="tasks" (taskSelected)=setCurentTask($event)></app-nav-list>
+    <app-detail [task]="currentTask" ></app-detail>
+</div>
