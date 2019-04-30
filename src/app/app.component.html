@@ -1,9 +1,3 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ task.name }}
-  </h1>
-  <div>
-    {{task.status}} : {{task.deadLine | date:"dd/MM/yyyy"}}
-  </div>
-</div> 
+<app-detail [task]="currentTask" ></app-detail>
+<app-nav-list [taskList]="tasks" ></app-nav-list>
