@@ -1,16 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Task } from './task';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskProviderService {
 
-  constructor(private http: HttpClient) { }
+  tasks = new Array<Task>();
+  tasksSubjet= new ReplaySubject<Task[]>(1);
+  constructor(private http: HttpClient) { 
+    this.http.get<Task[]>('/assets/tasks.json').subscribe(tasks=>{
+      this.tasks=tasks;
+      this.tasksSubjet.next(this.tasks);
+    })
+  }
 
   getTasks(): Observable<Task[]> {
-    return this.http.get<Task[]>('/assets/tasks.json')
+    return this.tasksSubjet.asObservable();
+  }
+
+  add(newTask:Task){
+    //ajoute au debut du tableau
+    this.tasks.unshift(newTask);
+    //notifie tous abooné avec la nouvelle version de la liste
+    this.tasksSubjet.next(this.tasks);
   }
 }

@@ -3,7 +3,7 @@
     <h1><i class="far fa-clipboard"></i> Todo List</h1>
 </header>
 <main class="App-Todo">
-    <app-nav-list [taskList]="tasks" (taskSelected)=setCurentTask($event)></app-nav-list>
-    <app-detail [task]="currentTask"></app-detail>
-    <app-create (taskCreated)="addTaskToList($event)"></app-create>
+    <app-nav-list></app-nav-list>
+    <app-detail></app-detail>
+    <app-create></app-create>
 </main>
