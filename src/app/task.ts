@@ -1,11 +1,11 @@
-export enum TaskStatus{
+export enum TaskStatus {
     Todo,
     Doing,
-    Done,
+    Done
 }
 
-export class Task{
-    name:string;
-    status:TaskStatus;
+export class Task {
+    name: string;
+    status: TaskStatus;
     deadLine: Date;
 }

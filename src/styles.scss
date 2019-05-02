@@ -3,20 +3,24 @@
   padding: 0;
   margin: 0;
 }
+
 .App-Title {
   color: #FFFFFF;
   background-color: #388E3C;
   padding-left: 1em;
   padding-bottom: 0.5em;
 }
+
 .App-Todo {
   display: flex;
   flex-flow: wrap row;
   background-color: #F2F4F4;
   justify-content: space-between;
 }
+
 app-nav-list {
   margin: 1em;
+
   div {
     text-align: center;
     margin-top: 0.25em;
@@ -30,26 +34,32 @@ app-nav-list {
     background-color: rgb(113, 194, 117);
   }
 }
+
 app-detail {
   align-self: center;
 
   h2 {
     color: #388E3C;
   }
+
   color:royalblue;
   text-align: center;
 }
+
 app-create {
   align-self: center;
   color: royalblue;
   margin: 1em;
+
   label {
     margin-right: 0.25em;
   }
+
   input,
   select {
     margin: 0.25em;
   }
+
   button {
     margin: 0.25em;
     color: #F2F4F4;
@@ -57,13 +67,16 @@ app-create {
     border-radius: 0.5em;
     padding: 0.25em;
   }
+
   button:hover {
     background-color: rgb(113, 194, 117);
   }
 }
-.ng-invalid.ng-touched{
+
+.ng-invalid.ng-touched {
   border-color: #FF3535;
 }
+
 .pValid {
   color: white;
   background-color: #CC2222;
