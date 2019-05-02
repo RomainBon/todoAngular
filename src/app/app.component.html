@@ -1,9 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="App-Title">
+<header class="App-Title">
     <h1><i class="far fa-clipboard"></i> Todo List</h1>
-</div>
-<div class="App-Todo">
+</header>
+<main class="App-Todo">
     <app-nav-list [taskList]="tasks" (taskSelected)=setCurentTask($event)></app-nav-list>
     <app-detail [task]="currentTask"></app-detail>
     <app-create (taskCreated)="addTaskToList($event)"></app-create>
-</div>
+</main>

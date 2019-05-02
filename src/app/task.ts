@@ -1,7 +1,7 @@
 export enum TaskStatus{
-    Todo="Tomorrow, I begin ",
-    Doing="Doing",
-    Done="Already done boss ;)"
+    Todo,
+    Doing,
+    Done,
 }
 
 export class Task{
