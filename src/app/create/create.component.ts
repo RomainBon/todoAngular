@@ -6,13 +6,13 @@ import { Task } from '../task';
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.scss']
 })
-export class CreateComponent{
-  
+export class CreateComponent {
+
   @Output() taskCreated = new EventEmitter<Task>();
 
   newTask = new Task();
 
-  addTask(){
+  addTask() {
     this.taskCreated.emit(this.newTask)
     this.newTask = new Task();
   }

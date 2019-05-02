@@ -5,22 +5,24 @@ import { TaskProviderService } from './task-provider.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  /*providers:[TaskProviderService], On peut injecter un service a plusieur niveau mais angular prendre toujours l'injection la +proche */
 })
 export class AppComponent implements OnInit {
   tasks: Array<Task> = [];
- 
+  currentTask = new Task;
 
-  constructor(public manager: TaskProviderService) {}
+  constructor(public manager: TaskProviderService) { }
 
   ngOnInit(): void {
     this.tasks = this.manager.tasks;
-  } 
-  currentTask = this.tasks[0];
-  setCurentTask(task: Task) {
+    this.currentTask = this.tasks[0];
+  }
+
+  setCurentTask(task: Task): void {
     this.currentTask = task;
   }
-  addTaskToList(task: Task) {
+  addTaskToList(task: Task): void {
     this.tasks.unshift(task);
     this.currentTask = task;
   }
