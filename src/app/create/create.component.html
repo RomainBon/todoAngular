@@ -1,4 +1,4 @@
-<form (ngSubmit)="addTask(); form.reset()" #form="ngForm">
+<form (ngSubmit)="addTask()" #form="ngForm">
   <div>
     <label for="create[name]">Nom</label>
     <input id="create[name]" name="name" [(ngModel)]="newTask.name" required pattern="[a-zA-Z0-9 _-]*"
