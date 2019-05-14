@@ -7,13 +7,15 @@ import { NavListComponent } from './nav-list/nav-list.component';
 import { DetailComponent } from './detail/detail.component';
 import { CreateComponent } from './create/create.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ShowStatComponent } from './show-stat/show-stat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavListComponent,
     DetailComponent,
-    CreateComponent
+    CreateComponent,
+    ShowStatComponent
   ],
   imports: [
     BrowserModule,

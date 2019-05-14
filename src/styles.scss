@@ -73,6 +73,20 @@ app-create {
   }
 }
 
+app-show-stat{
+  color : royalblue;
+
+  .Done{
+    border-right: solid #388E3C 0.5em;
+  }
+  .ToDo{
+    border-right: solid#CC2222 0.5em;
+  }
+  .Doing{
+    border-right: solid #FAA511 0.5em;
+  }
+}
+
 .ng-invalid.ng-touched {
   border-color: #FF3535;
 }
