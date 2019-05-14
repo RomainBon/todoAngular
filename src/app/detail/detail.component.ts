@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../task';
-import { CurrentTaskProviderService } from '../current-task-provider.service'
+import { TaskProviderService } from '../task-provider.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -11,9 +12,14 @@ export class DetailComponent implements OnInit {
 
   task = new Task();
 
-  constructor(private currentTaskProviderService: CurrentTaskProviderService) { }
+  constructor(private provider: TaskProviderService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.currentTaskProviderService.getCurrentTask().subscribe(task => this.task = task)
+    // On va recuprérer l'id passe en url
+    this.route.paramMap.subscribe(
+      (params: ParamMap) =>
+        this.task = this.provider.getbyId(+params.get('id'))
+    );
   }
 }

@@ -9,10 +9,10 @@ import { Observable, ReplaySubject } from 'rxjs';
 export class TaskProviderService {
 
   tasks = new Array<Task>();
-  tasksSubjet= new ReplaySubject<Task[]>(1);
-  constructor(private http: HttpClient) { 
-    this.http.get<Task[]>('/assets/tasks.json').subscribe(tasks=>{
-      this.tasks=tasks;
+  tasksSubjet = new ReplaySubject<Task[]>(1);
+  constructor(private http: HttpClient) {
+    this.http.get<Task[]>('/assets/tasks.json').subscribe(tasks => {
+      this.tasks = tasks;
       this.tasksSubjet.next(this.tasks);
     })
   }
@@ -21,10 +21,15 @@ export class TaskProviderService {
     return this.tasksSubjet.asObservable();
   }
 
-  add(newTask:Task){
+  add(newTask: Task) {
     //ajoute au debut du tableau
     this.tasks.unshift(newTask);
     //notifie tous abooné avec la nouvelle version de la liste
     this.tasksSubjet.next(this.tasks);
+  }
+  getbyId(id: number) {
+    const task = this.tasks.find((taskelt: Task) => taskelt.id === id);
+    console.log(task);
+    return task;
   }
 }

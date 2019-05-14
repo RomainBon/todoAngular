@@ -1,10 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <header class="App-Title">
     <h1><i class="far fa-clipboard"></i> Todo List</h1>
+
 </header>
+<nav>
+    <ul>
+        <li><a routerLink="todolist">Liste</a></li>
+        <li><a routerLink="create">Création</a></li>
+    </ul>
+</nav>
 <main class="App-Todo">
-    <app-nav-list></app-nav-list>
-    <app-detail></app-detail>
-    <app-create></app-create>
-    <app-show-stat></app-show-stat>
+    <router-outlet></router-outlet>
 </main>

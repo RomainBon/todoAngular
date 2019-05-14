@@ -3,10 +3,27 @@
   padding: 0;
   margin: 0;
 }
-
+nav {
+  ul {
+    list-style-type: none;
+    padding: 0 4ch;
+    display: flex;
+    background-color: #489e4c;
+    a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 0.5em; 
+      &:hover {
+      background-color: white;
+      color: #388e3c;
+    }
+    }
+  }
+}
 .App-Title {
-  color: #FFFFFF;
-  background-color: #388E3C;
+  color: #ffffff;
+  background-color: #388e3c;
   padding-left: 1em;
   padding-bottom: 0.5em;
 }
@@ -14,23 +31,27 @@
 .App-Todo {
   display: flex;
   flex-flow: wrap row;
-  background-color: #F2F4F4;
-  justify-content: space-between;
+  background-color: #f2f4f4;
+  justify-content: center;
 }
 
 app-nav-list {
   margin: 1em;
 
-  div {
+  li {
     text-align: center;
     margin-top: 0.25em;
-    color: #F2F4F4;
-    background-color: #388E3C;
+    color: #f2f4f4;
+    background-color: #388e3c;
     border-radius: 0.5em;
     padding: 0.25em;
   }
+  a{
+    text-decoration: none;
+    color: #f2f4f4
+  }
 
-  div:hover {
+  li:hover {
     background-color: rgb(113, 194, 117);
   }
 }
@@ -39,10 +60,10 @@ app-detail {
   align-self: center;
 
   h2 {
-    color: #388E3C;
+    color: #388e3c;
   }
 
-  color:royalblue;
+  color: royalblue;
   text-align: center;
 }
 
@@ -62,8 +83,8 @@ app-create {
 
   button {
     margin: 0.25em;
-    color: #F2F4F4;
-    background-color: #388E3C;
+    color: #f2f4f4;
+    background-color: #388e3c;
     border-radius: 0.5em;
     padding: 0.25em;
   }
@@ -73,26 +94,26 @@ app-create {
   }
 }
 
-app-show-stat{
-  color : royalblue;
+app-show-stat {
+  color: royalblue;
 
-  .Done{
-    border-right: solid #388E3C 0.5em;
+  .Done {
+    border-right: solid #388e3c 0.5em;
   }
-  .ToDo{
+  .ToDo {
     border-right: solid#CC2222 0.5em;
   }
-  .Doing{
-    border-right: solid #FAA511 0.5em;
+  .Doing {
+    border-right: solid #faa511 0.5em;
   }
 }
 
 .ng-invalid.ng-touched {
-  border-color: #FF3535;
+  border-color: #ff3535;
 }
 
 .pValid {
   color: white;
-  background-color: #CC2222;
+  background-color: #cc2222;
   text-align: end;
 }
